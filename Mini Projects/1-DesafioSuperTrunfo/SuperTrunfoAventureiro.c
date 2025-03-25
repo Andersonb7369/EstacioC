@@ -15,7 +15,7 @@ typedef struct {
     float densidade_populacional;
     float pib_per_capita;
 } Cidade;
-
+ 
 void cadastrarCartas(Cidade cidades[NUM_ESTADOS][NUM_CIDADES]) {
     char estados[] = "ABCDEF";
     for (int i = 0; i < NUM_ESTADOS; i++) {
