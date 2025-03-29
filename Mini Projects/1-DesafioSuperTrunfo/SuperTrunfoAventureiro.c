@@ -21,8 +21,8 @@ void cadastrarCartas(Cidade cidades[NUM_ESTADOS][NUM_CIDADES]) {
     for (int i = 0; i < NUM_ESTADOS; i++) {
         for (int j = 0; j < NUM_CIDADES; j++) {
 
-            cidades[i][j].carta = i + 1;
-            cidades[i][j].estado = estados[j];
+            cidades[i][j].carta = j + 1;
+            cidades[i][j].estado = estados[i];
 
             printf("Cadastro da cidade %c%02d:\n", estados[i], j + 1);
             sprintf(cidades[i][j].codigo, "%c%02d", estados[i], j + 1);
