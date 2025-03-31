@@ -71,17 +71,6 @@ void cadastrar(Trunfo cartaTrunfo[ESTADOS][CIDADES]) {
 }
 
 
-// comparar cartas
-void compararCartas(Trunfo cartaTrunfo[ESTADOS][CIDADES]){
-    // for (int e = 0; e < ESTADOS; e++ ){  
-    //     for (int c = 0; c < CIDADES; c++){
-    //         Cartas carta;
-    //         carta.Cartas = cartaTrunfo[e][c].numeroCarta;
-    //         printf("\nCarta %d", carta.Cartas);
-       
-    //     }
-    // }
-}
 
 void exibirCartas(Trunfo cartaTrunfo[ESTADOS][CIDADES]){
     for (int e = 0; e < ESTADOS; e++ ){  
@@ -98,9 +87,101 @@ void exibirCartas(Trunfo cartaTrunfo[ESTADOS][CIDADES]){
             printf("Pib PerCapita: %.2f reais\n", cartaTrunfo[e][c].pibPercapita);
             printf("Super poder: %.0f\n\n", cartaTrunfo[e][c].superPoder);
             printf("--------------------------------------------------");
-        
+            
         }
     }
+}
+
+
+// int compara(int c1, int c2){
+//     if (c1 > c2){
+//         printf("Carta 1 venceu !!\n");
+//         return 1;
+//     } else if (c1 < c2) {
+//         printf("Carta 2 venceu !!\n");
+//         return -1;
+//     } else {
+//         printf("Empate !!\n");
+//         return 0;     
+//     }
+// }
+
+// comparar cartas
+void compararCartas(Trunfo carta1, Trunfo carta2) {
+    int populacao1 = carta1.populacao;
+    int populacao2 = carta2.populacao;
+    int area1 = carta1.area;
+    int area2 = carta2.area;
+    int pib1 = carta1.pib;
+    int pib2 = carta2.pib;
+    int pontoTur1 = carta1.pontosTurusticos;
+    int pontoTur2 = carta2.pontosTurusticos;
+    int densidade1 = carta1.densidade;
+    int densidade2 = carta2.densidade;
+    int pibPerCapta1 = carta1.pibPercapita;
+    int pibPerCapta2 = carta2.pibPercapita;
+    int superPoder1 = carta1.superPoder;
+    int superPoder2 = carta2.superPoder;
+
+    printf("\nComparando cartas: %s e %s\n\n", carta1.codigo, carta2.codigo);
+
+    if (populacao1 > populacao2){
+        printf("População: Carta 1 Venceu");
+    } else if (populacao1 < populacao2) {
+        printf("População: Carta 2 Venceu");
+    } else {
+        printf("População: Empate");
+    }
+
+    if (area1 > area2) {
+        printf("\nÁrea: Carta 1 Venceu");
+    } else if (area1 < area2) {
+        printf("\nÁrea: Carta 2 Venceu");
+    } else {
+        printf("\nÁrea: Empate");
+    }
+
+    if (pib1 > pib2) {
+        printf("\nPIB: Carta 1 Venceu");
+    } else if (pib1 < pib2) {
+        printf("\nPIB: Carta 2 Venceu");
+    } else {
+        printf("\nPIB: Empate");
+    }
+
+    if (pontoTur1 > pontoTur2) {
+        printf("\nPontos Turísticos: Carta 1 Venceu");
+    } else if (pontoTur1 < pontoTur2) {
+        printf("\nPontos Turísticos: Carta 2 Venceu");
+    } else {
+        printf("\nPontos Turísticos: Empate");
+    }
+
+    if (densidade1 > densidade2) {
+        printf("\nDensidade: Carta 1 Venceu");
+    } else if (densidade1 < densidade2) {
+        printf("\nDensidade: Carta 2 Venceu");
+    } else {
+        printf("\nDensidade: Empate");
+    }
+
+    if (pibPerCapta1 < pibPerCapta2) {
+        printf("\nPIB Per Capita: Carta 1 Venceu");
+    } else if (pibPerCapta1 > pibPerCapta2) {
+        printf("\nPIB Per Capita: Carta 2 Venceu");
+    } else {
+        printf("\nPIB Per Capita: Empate");
+    }
+
+    if (superPoder1 > superPoder2) {
+        printf("\nSuper Poder: Carta 1 Venceu");
+    } else if (superPoder1 < superPoder2) {
+        printf("\nSuper Poder: Carta 2 Venceu");
+    } else {
+        printf("\nSuper Poder: Empate");
+    }
+
+
 }
 
 
@@ -108,7 +189,16 @@ int main() {
     Trunfo cartaTrunfo[ESTADOS][CIDADES];
     cadastrar(cartaTrunfo);
     exibirCartas(cartaTrunfo);
-    // compararCartas(cartaTrunfo);
+
+    // solicitando as cartas ao Usuario e armazenando em variaveis
+    int carta11, carta12, carta21, carta22;
+    printf("\n\nDigite o numero da primeira carta (para A01 digite 0 1): ");
+    scanf("%d %d", &carta11, &carta12);
+    printf("\n\nDigite o numero da segunda carta (para A01 digite 0 2): ");
+    scanf("%d %d", &carta21, &carta22);
+
+    // Chamando a função para comparar as cartas
+    compararCartas(cartaTrunfo[carta11][carta12], cartaTrunfo[carta21][carta22]);
 }
 
 
