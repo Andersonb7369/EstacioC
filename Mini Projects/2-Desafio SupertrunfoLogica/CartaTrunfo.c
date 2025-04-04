@@ -224,7 +224,7 @@ void compararCartas(Trunfo carta1, Trunfo carta2) {
         break;
     case 6:
         strcpy(atributoEscolhido2, "Pib PerCapta");
-        atributo2 = pibPerCapta1 < pibPerCapta2 ? 1 : 2;
+        atributo2 = pibPerCapta1 > pibPerCapta2 ? 1 : 2;
         valores1b = carta1.pibPercapita;
         valores2b = carta2.pibPercapita;
         break;
