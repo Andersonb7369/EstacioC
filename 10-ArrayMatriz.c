@@ -1,6 +1,4 @@
-
-
-
+#include <stdio.h>
 // // arrays/vetor armazenam valores de um mesmo tipo
 // // acessiveis por um índice
 // int numeros[5] = {10, 20, 30, 40, 50};
@@ -30,8 +28,8 @@
 
 //     return 0;
 // }
+ 
 
-#include <stdio.h>
  
 int main1() {
     int matriz[3][3] = {
